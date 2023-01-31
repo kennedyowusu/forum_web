@@ -1,3 +1,4 @@
+import logo from '../assets/logo.png'
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
 import { navLinkItems } from '../../utils/navLinkItems';

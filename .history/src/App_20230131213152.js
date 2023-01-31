@@ -4,13 +4,15 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className='w-full'>
+    <div className="App">
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path="/" element={ <} />
+        <Route path="/about" element={<h1>About</h1>} />
+        <Route path="/contact" element={<h1>Contact</h1>} />
       </Routes>
     </div>
-  )
+  );
 }
 
 export default App;

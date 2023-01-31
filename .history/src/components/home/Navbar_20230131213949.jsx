@@ -1,6 +1,7 @@
+import logo from '../assets/logo.png'
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
-import { navLinkItems } from '../../utils/navLinkItems';
+import { navLinkItems } './'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,6 +14,7 @@ const Navbar = () => {
     <nav className='w-full h-[80px]'>
       <div className='px-4 flex justify-between items-center h-full w-full bg-[#6B7A8F]'>
         <div className='items-center flex'>
+          <img src={logo} alt='Logo' height={50} width={50} />
           <h1 className='px-3 text-2xl font-bold text-white'>Logo</h1>
         </div>
         <div className='pr-4 md:flex items-center'>
