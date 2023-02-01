@@ -2,7 +2,7 @@ import loginImg from '../assets/login.jpg'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { loginUser } from '../redux/authentication/loginSlice'
+import { registerUser } from '../redux/authentication/registerSlice'
 import { toast } from 'react-toastify'
 
 
@@ -38,6 +38,7 @@ const Login = () => {
       setError(error.message)
     }
   }
+
 
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>

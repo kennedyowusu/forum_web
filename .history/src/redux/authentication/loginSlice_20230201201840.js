@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAction, createAsyncThunk } from '@reduxjs/toolkit'
 import axiosInstance from '../../utils/axiosInstance'
 
 export const loginUser = createAsyncThunk(
@@ -40,8 +40,3 @@ const loginSlice = createSlice({
      })
    )
  }
-})
-
-export default loginSlice.reducer;
-export const selectLoginUser = state => state.login;
-export const loginActions = loginSlice.actions;

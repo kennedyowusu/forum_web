@@ -2,7 +2,7 @@ import loginImg from '../assets/login.jpg'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { loginUser } from '../redux/authentication/loginSlice'
+import { loginUser } from '../redux/authentication/registerSlice'
 import { toast } from 'react-toastify'
 
 

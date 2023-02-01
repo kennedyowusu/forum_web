@@ -1,13 +1,11 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAction, createAsyncThunk } from '@reduxjs/toolkit'
 import axiosInstance from '../../utils/axiosInstance'
 
-export const loginUser = createAsyncThunk(
- 'loginUser',
- async (data, thunkAPI) => {
-   axiosInstance
-    .post('/login', data)
- }
-)
+const loginUserAction = createAction('loginUser');
+
+export const loginUser = createAsyncThunk(loginUserAction, async (data, thunkAPI) => {
+  axiosInstance.post('/login', data)
+})
 
 const initialState = {
  loading: false,
