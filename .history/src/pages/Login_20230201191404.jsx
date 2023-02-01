@@ -22,7 +22,7 @@ const Login = () => {
     }
 
     // Dispatch the registerUser async thunk
-    // const res = await dispatch(registerUser(username, password))/
+    // const res = await dispatch(registerUser(name, username, email, password))/
   }
 
 
@@ -54,8 +54,6 @@ const Login = () => {
               className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
               type='password'
               placeholder='**********'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className='flex justify-between text-gray-400 py-2'>
@@ -66,15 +64,7 @@ const Login = () => {
               <Link to='/forgot-password'>Forget Password?</Link>
             </p>
           </div>
-          {error && (
-            <div className='text-red-500 text-sm font-semibold py-2'>
-              {error}
-            </div>
-          )}
-          <button
-            className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'
-            type='submit'
-          >
+          <button className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'>
             Sign In
           </button>
           <p className='text-center text-gray-400'>

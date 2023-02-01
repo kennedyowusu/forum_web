@@ -10,7 +10,7 @@ const ForgetPwd = () => {
     e.preventDefault()
   
     if (!email) {
-      setError('Email Address is required')
+      setError('Email is required')
       return
     }
 

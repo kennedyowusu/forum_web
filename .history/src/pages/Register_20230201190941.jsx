@@ -1,3 +1,4 @@
+import React from 'react'
 import loginImg from '../assets/login.jpg'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
@@ -12,26 +13,6 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    if (!name) {
-      setError('Name is required')
-      return
-    }
-
-    if (!username) {
-      setError('Username is required')
-      return
-    }
-
-    if (!email) {
-      setError('Email Address is required')
-      return
-    }
-
-    if (!password) {
-      setError('Password is required')
-      return
-    }
 
     // Dispatch the registerUser async thunk
     // const res = await dispatch(registerUser(name, username, email, password))/
@@ -55,7 +36,6 @@ const Register = () => {
               type='text'
               placeholder='Kennedy Owusu'
               value={name}
-              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className='flex flex-col text-gray-400 py-2'>
@@ -64,8 +44,6 @@ const Register = () => {
               className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
               type='text'
               placeholder='Kennedy'
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className='flex flex-col text-gray-400 py-2'>
@@ -74,8 +52,6 @@ const Register = () => {
               className='p-2 rounded-lg bg-gray-700 mt-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
               type='email'
               placeholder='kennediowusu@gmail.com'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className='flex flex-col text-gray-400 py-2'>
@@ -84,16 +60,9 @@ const Register = () => {
               className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
               type='password'
               placeholder='**********'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          {error && (
-            <div className='text-red-500 text-sm font-semibold py-2'>
-              {error}
-            </div>
-          )}
-          <button type="submit" className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'>
+          <button className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'>
             Sign Up
           </button>
           <p className='text-center text-gray-400'>

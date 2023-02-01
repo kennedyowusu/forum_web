@@ -1,3 +1,4 @@
+import React from 'react'
 import loginImg from '../assets/login.jpg'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
@@ -12,26 +13,6 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    if (!name) {
-      setError('Name is required')
-      return
-    }
-
-    if (!username) {
-      setError('Username is required')
-      return
-    }
-
-    if (!email) {
-      setError('Email Address is required')
-      return
-    }
-
-    if (!password) {
-      setError('Password is required')
-      return
-    }
 
     // Dispatch the registerUser async thunk
     // const res = await dispatch(registerUser(name, username, email, password))/

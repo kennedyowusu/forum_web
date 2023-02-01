@@ -24,7 +24,7 @@ const Register = () => {
     }
 
     if (!email) {
-      setError('Email Address is required')
+      setError('Email is required')
       return
     }
 

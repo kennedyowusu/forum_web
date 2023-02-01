@@ -1,3 +1,4 @@
+import React from 'react'
 import loginImg from '../assets/login.jpg'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
@@ -24,7 +25,7 @@ const Register = () => {
     }
 
     if (!email) {
-      setError('Email Address is required')
+      setError('Email is required')
       return
     }
 

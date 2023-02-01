@@ -6,13 +6,13 @@ const ForgetPwd = () => {
   const [email, setEmail] = useState('')
   const [error, setError] = useState(null)
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-  
-    if (!email) {
-      setError('Email Address is required')
-      return
-    }
+   const handleSubmit = async (e) => {
+     e.preventDefault()
+    
+     if (!email) {
+       setError('Email is required')
+       return
+     }
 
      // Dispatch the registerUser async thunk
      // const res = await dispatch(registerUser(name, username, email, password))/
