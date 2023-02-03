@@ -13,14 +13,7 @@ export const registerUser = createAsyncThunk(
         return thunkAPI.rejectWithValue(response.data);
       }
     } catch (error) {
-      if (error?.response?.data) {
-        return thunkAPI.rejectWithValue(error.response.data);
-      } else {
-        return thunkAPI.rejectWithValue({
-          message: "Something went wrong",
-          errors: {},
-        });
-      }
+      return thunkAPI.rejectWithValue(error.response.data);
     }
   }
 );
@@ -53,13 +46,16 @@ const registerSlice = createSlice({
         state.user = action.payload.user;
         state.errorMessage = "";
         state.errorStrings = [];
+        localStorage.setItem("token", action.payload.token);
       }),
       builder.addCase(registerUser.rejected, (state, action) => {
         state.loading = false;
         state.success = false;
         state.user = {};
-        state.errorMessage = action.payload.message;
-        state.errorStrings = Object.values(action.payload.errors).flat();
+        state.errorMessage = action?.payload?.message || "Something went wrong";
+        state.errorStrings = Object.values(
+          action?.payload?.errors || {}
+        ).flat();
       })
     );
   },

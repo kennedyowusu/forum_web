@@ -1,5 +1,5 @@
 import loginImg from "../assets/login.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -17,6 +17,9 @@ const Register = () => {
   const [error, setError] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const token = localStorage.getItem("token");
 
   const checkEmptyFields = () => {
     if (!name || !username || !email || !password) {
@@ -29,13 +32,16 @@ const Register = () => {
     useSelector(SelectRegisterState);
 
   useEffect(() => {
+    if (token) {
+      navigate("/");
+    }
     if (success) {
       toast.success(`Welcome ${user.name}`);
     }
     if (errorMessage) {
       toast.error(errorMessage);
     }
-  }, [errorMessage, success, user.name]);
+  }, [errorMessage, navigate, success, token, user, user.name]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
