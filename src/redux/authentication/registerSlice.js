@@ -1,47 +1,79 @@
-import { createSlice, createAction, createAsyncThunk } from '@reduxjs/toolkit'
-import axiosInstance from '../../utils/axiosInstance'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { post } from "../../utils/axiosInstance";
 
 export const registerUser = createAsyncThunk(
-  'registerUser',
+  "registerUser",
   async (data, thunkAPI) => {
-    axiosInstance
-     .post('/register', data)
+    try {
+      const response = await post("/register", data);
+
+      if (response.status === 201) {
+        return response.data;
+      } else {
+        return thunkAPI.rejectWithValue(response.data);
+      }
+    } catch (error) {
+      if (error?.response?.data) {
+        return thunkAPI.rejectWithValue(error.response.data);
+      } else {
+        return thunkAPI.rejectWithValue({
+          message: "Something went wrong",
+          errors: {},
+        });
+      }
+    }
   }
-)
+);
 
 const initialState = {
- loading: false,
- error: null,
- success: false,
-}
+  loading: false,
+  success: false,
+  user: {},
+  errorMessage: "",
+  errorStrings: [],
+};
 
 // Define the register slice
 const registerSlice = createSlice({
-  name: 'register',
+  name: "register",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(
       registerUser.pending,
-      (state, action) => {
-        state.loading = true
-        state.error = null
-        state.success = false
+      (state) => {
+        state.loading = true;
+        state.success = false;
+        state.errorMessage = "";
+        state.errorStrings = [];
       },
       builder.addCase(registerUser.fulfilled, (state, action) => {
-        state.loading = false
-        state.error = null
-        state.success = true
+        state.loading = false;
+        state.success = true;
+        state.user = action.payload.user;
+        state.errorMessage = "";
+        state.errorStrings = [];
       }),
       builder.addCase(registerUser.rejected, (state, action) => {
-        state.loading = false
-        state.error = action.error.message
-        state.success = false
+        state.loading = false;
+        state.success = false;
+        state.user = {};
+        state.errorMessage = action.payload.message;
+        state.errorStrings = Object.values(action.payload.errors).flat();
       })
-    )
+    );
   },
-})
+});
 
 export default registerSlice.reducer;
-export const selectRegisterUser = state => state.register;
+
+export const SelectRegisterState = (state) => state.register;
+export const selectRegisterLoading = (state) => state.register.loading;
+export const selectRegisterSuccess = (state) => state.register.success;
+export const selectRegisterUser = (state) => state.register.user;
+export const selectRegisterErrorMessage = (state) =>
+  state.register.errorMessage;
+export const selectRegisterErrorStrings = (state) =>
+  state.register.errorStrings;
+
 export const registerActions = registerSlice.actions;
