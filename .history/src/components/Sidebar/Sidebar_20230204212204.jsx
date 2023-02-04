@@ -24,7 +24,9 @@ const Sidebar = () => {
       <div class='z-20 fixed top-0 -left-96 lg:left-0 h-screen w-9/12 lg:w-72 bg-white shadow-2xl peer-focus:left-0 peer:transition ease-out delay-150 duration-200'>
         <nav role='navigation' class='p-6'>
           <div class='flex items-center gap-4 pb-4'>
-            <h1 class='text-2xl font-bold tracking-wider uppercase text-gray-800'>
+            <h1
+              class='text-2xl font-bold tracking-wider uppercase text-gray-800'
+            >
               <span class='text-cyan-500'>Forum</span>
             </h1>
             <img
@@ -89,7 +91,7 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Atomic css
                 </a>
               </li>
               <li>
@@ -102,7 +104,7 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Atomic Design
                 </a>
               </li>
               <li>
@@ -115,7 +117,7 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Default look
                 </a>
               </li>
             </ul>

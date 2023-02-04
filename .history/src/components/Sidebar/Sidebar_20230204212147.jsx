@@ -6,7 +6,7 @@ const Sidebar = () => {
   return (
     <div class='h-screen flex items-end justify-end px-4 pb-6'>
       <button class='relative z-30 lg:hidden peer h-14 w-14 rounded-full bg-cyan-500 hover:bg-cyan-600 focus:bg-cyan-600 active:bg-cyan-700 transition'>
-        <span class='text-white'>
+        {/* <span class='text-white'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='currentColor'
@@ -18,13 +18,15 @@ const Sidebar = () => {
               d='M3.646 9.146a.5.5 0 0 1 .708 0L8 12.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-2.292a.5.5 0 0 0 .708 0L8 3.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708z'
             />
           </svg>
-        </span>
+        </span> */}
       </button>
 
       <div class='z-20 fixed top-0 -left-96 lg:left-0 h-screen w-9/12 lg:w-72 bg-white shadow-2xl peer-focus:left-0 peer:transition ease-out delay-150 duration-200'>
         <nav role='navigation' class='p-6'>
           <div class='flex items-center gap-4 pb-4'>
-            <h1 class='text-2xl font-bold tracking-wider uppercase text-gray-800'>
+            <h1
+              class='text-2xl font-bold tracking-wider uppercase text-gray-800'
+            >
               <span class='text-cyan-500'>Forum</span>
             </h1>
             <img
@@ -76,7 +78,7 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Documentation
                 </a>
               </li>
               <li>
@@ -89,7 +91,7 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Atomic css
                 </a>
               </li>
               <li>
@@ -102,7 +104,7 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Atomic Design
                 </a>
               </li>
               <li>
@@ -115,7 +117,7 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Default look
                 </a>
               </li>
             </ul>

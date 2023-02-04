@@ -24,14 +24,15 @@ const Sidebar = () => {
       <div class='z-20 fixed top-0 -left-96 lg:left-0 h-screen w-9/12 lg:w-72 bg-white shadow-2xl peer-focus:left-0 peer:transition ease-out delay-150 duration-200'>
         <nav role='navigation' class='p-6'>
           <div class='flex items-center gap-4 pb-4'>
-            <h1 class='text-2xl font-bold tracking-wider uppercase text-gray-800'>
-              <span class='text-cyan-500'>Forum</span>
+            <h1>
+              F
+              <span class='text-cyan-500'>Forum</span>us
             </h1>
-            <img
-              class='w-8'
-              src='https://tailwindui.com/img/logos/workflow-mark-cyan-600.svg'
+            {/* <img
+              class='w-32'
+              src='https://raw.githubusercontent.com/Meschacirung/Tailus-website/f59a4b3ecc1ad9f6a2b0ad9e3fca6f957140cc4d/public/images/logo.svg'
               alt='tailus-logo'
-            />
+            /> */}
           </div>
 
           <div class='relative'>
@@ -76,7 +77,7 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Documentation
                 </a>
               </li>
               <li>
@@ -89,7 +90,7 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Atomic css
                 </a>
               </li>
               <li>
@@ -102,7 +103,7 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Atomic Design
                 </a>
               </li>
               <li>
@@ -115,8 +116,115 @@ const Sidebar = () => {
                     class='w-6'
                     alt=''
                   />
-                  Home
+                  Default look
                 </a>
+              </li>
+            </ul>
+            <ul class='space-y-4'>
+              <li class='pr-2'>
+                <div class='py-2 px-4 text-gray-700 uppercase'>
+                  <a href='' class='block'>
+                    Atoms
+                  </a>
+                </div>
+                <ul class='text-sm pb-24'>
+                  <li>
+                    <a
+                      href=''
+                      class='block py-2 px-5 rounded bg-cyan-500 bg-opacity-10 hover:bg-opacity-20 text-cyan-500'
+                    >
+                      Alert
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      Avatars
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      Badges
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      Banners
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      Buttons
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      Button-groups
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      Avatar
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      Badges
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      Checkboxes
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      Chips
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      File inputs
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class='block py-2 px-5 hover:text-gray-800 transition'
+                      href=''
+                    >
+                      Flags
+                    </a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
