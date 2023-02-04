@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors');
 export const content = ['./src/**/*.{js,jsx,ts,tsx}'];
 export const theme = {
   screens: {

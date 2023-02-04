@@ -1,10 +1,8 @@
 import React from "react";
-import Sidebar from '../components/Sidebar/Sidebar'
 
 const Home = () => {
   return (
-    <>
-      <Sidebar />
+    <div>
       <div className='flex flex-col h-[100vh] items-center justify-center space-y-5'>
         <h1 className=' text-3xl font-bold underline'>Hello world!</h1>
         <button
@@ -16,7 +14,7 @@ const Home = () => {
           Logout
         </button>
       </div>
-    </>
+    </div>
   )
 };
 

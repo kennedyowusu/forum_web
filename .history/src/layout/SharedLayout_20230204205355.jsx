@@ -1,15 +1,15 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Sidebar from './components/Sidebar'
+import Sidebar from '..'
 
 const SharedLayout = () => {
   return (
-  <div>
+   <div>
     <Sidebar />
     <main>
       <Outlet />
     </main>
-  </div>
+    </div>
   )
 }
 
