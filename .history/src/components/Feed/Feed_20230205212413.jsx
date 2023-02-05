@@ -4,7 +4,7 @@ import Trends from './Trends'
 
 const Feed = () => {
   return (
-    <div className='flex'>
+    <div className=''>
       {/* Left Side Feed */}
       <LeftSide />
     
