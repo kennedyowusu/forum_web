@@ -14,7 +14,7 @@ const Trends = () => {
         '>
           <Link
             to={path}
-            className='flex items-center p-2 space-x-2 rounded-md hover:bg-gray-200 pt-4 object-cover'
+            className='flex items-center p-2 space-x-2 rounded-md hover:bg-gray-200 pt-4 '
           >
             <Icon icon={icon} className='text-2xl' />
             <h4 className=''>{title}</h4>
