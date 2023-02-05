@@ -1,7 +1,7 @@
 import React from 'react'
 import LeftSide from './LeftSide'
 
-const Header = () => {
+const MainContainer = () => {
   return (
     <div className='p-4'>
       {/* Left Side */}
@@ -15,4 +15,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default MainContainer
