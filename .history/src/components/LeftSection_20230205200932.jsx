@@ -10,7 +10,7 @@ const LeftSection = () => {
           <img
             src={image}
             alt='Logo'
-            className='rounded-full border-2 border-gray-300 w-12 h-12 object-cover cursor-pointer hover:opacity-80 transition duration-300 ease-in-out'
+            className='rounded-full border-2 border-teal-300 w-12 h-12 object-cover cursor-pointer hover:opacity-80 transition duration-300 ease-in-out'
           />
         </Link>
       </div>

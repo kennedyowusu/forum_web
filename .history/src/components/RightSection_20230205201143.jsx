@@ -14,7 +14,7 @@ const RightSection = () => {
         <Icon
           icon='ant-design:user-outlined'
           className='w-12 h-12
-        border-2 border-gray-300 rounded-full p-1 hover:bg-gray-200 transition duration-300 ease-in-out
+        border-2 border-teal-300 rounded-full p-1 hover:bg-gray-200 transition duration-300 ease-in-out
        '
         />
       </Link>

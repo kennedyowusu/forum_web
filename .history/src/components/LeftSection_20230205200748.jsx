@@ -7,10 +7,9 @@ const LeftSection = () => {
     <div className='flex items-center'>
       <div className='w-14 h-14'>
         <Link to='/'>
-          <img
-            src={image}
-            alt='Logo'
-            className='rounded-full border-2 border-gray-300 w-12 h-12 object-cover cursor-pointer hover:opacity-80 transition duration-300 ease-in-out'
+          <img src={image} alt='Logo'
+          className='rounded-full w-14 h-14 object-cover '
+
           />
         </Link>
       </div>
