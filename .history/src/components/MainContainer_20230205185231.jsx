@@ -4,7 +4,7 @@ import MiddleSection from './MiddleSection'
 
 const MainContainer = () => {
   return (
-    <div className='p-4 flex items-center justify-between '>
+    <div className='p-4 flex item'>
       {/* Left Side */}
       <LeftSection />
 

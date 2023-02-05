@@ -1,15 +1,14 @@
 import React from 'react'
-import LeftSection from './LeftSection'
-import MiddleSection from './MiddleSection'
+import LeftSide from './LeftSide'
 
 const MainContainer = () => {
   return (
-    <div className='p-4 flex items-center justify-between '>
+    <div className='p-4'>
       {/* Left Side */}
-      <LeftSection />
+      <LeftSide />
 
       {/* Middle Side */}
-      <MiddleSection />
+      
 
       {/* Right Side */}
     </div>

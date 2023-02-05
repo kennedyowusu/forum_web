@@ -4,12 +4,14 @@ import MiddleSection from './MiddleSection'
 
 const MainContainer = () => {
   return (
-    <div className='p-4 flex items-center justify-between '>
+    <div className='p-4'>
       {/* Left Side */}
       <LeftSection />
 
       {/* Middle Side */}
-      <MiddleSection />
+      <div className=''>
+        <Icon icon='material-symbols:home-outline-rounded' />
+      </div>
 
       {/* Right Side */}
     </div>
