@@ -15,8 +15,8 @@ export const navLinkItems = [
   {
     id: 3,
     title: 'Friends ',
-    path: '/friends',
-    icon: 'carbon:friendship',
+    path: '/profile',
+    icon: 'carbon:friendship"',
   },
   {
     id: 4,

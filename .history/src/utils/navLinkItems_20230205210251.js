@@ -12,32 +12,27 @@ export const navLinkItems = [
     path: '/profile',
     icon: 'iconoir:profile-circle',
   },
+  
   {
     id: 3,
-    title: 'Friends ',
-    path: '/friends',
-    icon: 'carbon:friendship',
-  },
-  {
-    id: 4,
     title: 'Community',
     path: '/community',
     icon: 'fluent:people-community-20-regular',
   },
   {
-    id: 5,
+    id: 4,
     title: 'Topics',
     path: '/topics',
     icon: 'ph:folders',
   },
   {
-    id: 6,
+    id: 5,
     title: 'Clock',
     path: '/clock',
     icon: 'mdi:account-clock-outline',
   },
   {
-    id: 7,
+    id: 6,
     title: 'Logout',
     path: '/logout',
     icon: 'ant-design:logout-outlined',

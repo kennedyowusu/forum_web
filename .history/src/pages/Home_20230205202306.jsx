@@ -1,6 +1,5 @@
 import { useState } from "react";
 import MainContainer from "../components/MainContainer";
-import Feed from "../components/Feed/Feed";
 
 const Home = () => {
   const [title, setTitle] = useState("");
@@ -23,9 +22,8 @@ const Home = () => {
 
   return (
     <>
-      <section className=''>
+      <section className='flex flex-col h-[100vh] '>
         <MainContainer />
-        <Feed />
       </section>
     </>
   )

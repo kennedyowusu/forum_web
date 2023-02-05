@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="w-full">
       <ToastContainer />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />

@@ -7,11 +7,13 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
+import MainContainer from "./components/MainContainer";
 
 function App() {
   return (
     <div className="w-full">
       <ToastContainer />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />

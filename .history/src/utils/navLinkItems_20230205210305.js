@@ -14,9 +14,9 @@ export const navLinkItems = [
   },
   {
     id: 3,
-    title: 'Friends ',
-    path: '/friends',
-    icon: 'carbon:friendship',
+    title: 'Profile',
+    path: '/profile',
+    icon: 'carbon:friendship"',
   },
   {
     id: 4,
@@ -25,19 +25,19 @@ export const navLinkItems = [
     icon: 'fluent:people-community-20-regular',
   },
   {
-    id: 5,
+    id: 4,
     title: 'Topics',
     path: '/topics',
     icon: 'ph:folders',
   },
   {
-    id: 6,
+    id: 5,
     title: 'Clock',
     path: '/clock',
     icon: 'mdi:account-clock-outline',
   },
   {
-    id: 7,
+    id: 6,
     title: 'Logout',
     path: '/logout',
     icon: 'ant-design:logout-outlined',
