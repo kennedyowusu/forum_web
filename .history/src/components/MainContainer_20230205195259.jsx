@@ -5,7 +5,7 @@ import RightSection from './RightSection'
 
 const MainContainer = () => {
   return (
-    <div className='p-4 flex items-center justify-between border-b lg:px-10'>
+    <div className='p-4 flex items-center justify-between border-b '>
       {/* Left Side */}
       <LeftSection />
 

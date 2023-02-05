@@ -5,11 +5,9 @@ import { Link } from 'react-router-dom'
 const RightSection = () => {
   return (
     <div className='flex space-x-7 items-center'>
-      <div className='md:flex space-x-7 hidden ml-4 '>
-        <Icon icon='ic:baseline-notifications-none' className='w-9 h-9' />
+      <Icon icon='ic:baseline-notifications-none' className='w-9 h-9' />
 
-        <Icon icon='ant-design:logout-outlined' className='w-9 h-9' />
-      </div>
+      <Icon icon='ant-design:logout-outlined' className='w-9 h-9' />
       <Link to='/profile'>
         <Icon
           icon='ant-design:user-outlined'

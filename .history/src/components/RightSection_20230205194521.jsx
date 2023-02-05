@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const RightSection = () => {
   return (
-    <div className='flex space-x-7 items-center'>
+    <div className='flex space-x-7 items-center pr-2'>
       <div className='md:flex space-x-7 hidden ml-4 '>
         <Icon icon='ic:baseline-notifications-none' className='w-9 h-9' />
 

@@ -5,7 +5,7 @@ import image from '../assets/forum.png'
 const LeftSection = () => {
   return (
     <div className='flex items-center'>
-      <div className='w-14 h-14'>
+      <div className='w-10 h-10 mt-2'>
         <Link to='/'>
           <img src={image} alt='Logo' />
         </Link>
