@@ -4,7 +4,7 @@ import kennedy from '../../assets/kennedy.jpeg'
 const CreateFeed = () => {
   return (
     <div
-      className='flex px-4 py-3 border-b sm:px-4 md:px-4'
+      className='flex px-4 py-3 border-b border-[#f2f3f7] bg-[#f2f3f7] sm:px-4 md:px-4'
     >
       <div className='w-screen sm:w-full flex justify-center items'>
         <div
