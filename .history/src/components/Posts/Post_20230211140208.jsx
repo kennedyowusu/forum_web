@@ -22,7 +22,7 @@ const Post = () => {
 
       {/* Post Body */}
       <div className='mt-3'>
-        <p className='text-gray-500 text-sm text-justify '>
+        <p className='text-gray-500 text-sm '>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
           quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Quisquam, quod.
@@ -31,33 +31,13 @@ const Post = () => {
 
       {/* Post Footer */}
       <div className='mt-3'>
+        {/* Put like icon, likes count, comment icon and delete icon side by side */}
         <div className='flex items-center'>
-          <div className='flex items-center'>
-            <Icon
-              icon='wpf:like'
-              className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6'
-            />
-            <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
-              <span className='font-bold'>2</span> Likes
-            </p>
-          </div>
-
-          <div className='flex items-center ml-8'>
-            <Icon
-              icon='material-symbols:comment-rounded'
-              className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6'
-            />
-            <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
-              <span className='font-bold'>2</span> Comments
-            </p>
-          </div>
-
-          <div className='flex items-center ml-8'>
-            <Icon
-              icon='ic:baseline-delete'
-              className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1 w-6 h-6'
-            />
-          </div>
+          <div className='flex items-center'></div>
+      <Icon icon='wpf:like' />
+      <p>
+        <span className='font-bold'>2</span> Likes
+      </p>
         </div>
       </div>
     </div>

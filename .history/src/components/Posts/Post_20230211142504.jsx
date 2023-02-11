@@ -42,7 +42,7 @@ const Post = () => {
             </p>
           </div>
 
-          <div className='flex items-center ml-8'>
+          <div className='flex items-center ml-5'>
             <Icon
               icon='material-symbols:comment-rounded'
               className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6'
@@ -52,7 +52,7 @@ const Post = () => {
             </p>
           </div>
 
-          <div className='flex items-center ml-8'>
+          <div className='flex items-center ml-5'>
             <Icon
               icon='ic:baseline-delete'
               className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1 w-6 h-6'

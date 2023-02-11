@@ -31,31 +31,31 @@ const Post = () => {
 
       {/* Post Footer */}
       <div className='mt-3'>
-        <div className='flex items-center'>
+        <div className='flex items-center justify-center'>
           <div className='flex items-center'>
             <Icon
               icon='wpf:like'
-              className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6'
+              className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1'
             />
             <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
               <span className='font-bold'>2</span> Likes
             </p>
           </div>
 
-          <div className='flex items-center ml-8'>
+          <div className='flex items-center ml-3 justify-center'>
             <Icon
               icon='material-symbols:comment-rounded'
-              className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6'
+              className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1'
             />
             <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
               <span className='font-bold'>2</span> Comments
             </p>
           </div>
 
-          <div className='flex items-center ml-8'>
+          <div className='flex items-center ml-3'>
             <Icon
               icon='ic:baseline-delete'
-              className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1 w-6 h-6'
+              className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1'
             />
           </div>
         </div>
