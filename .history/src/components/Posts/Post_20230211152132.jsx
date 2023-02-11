@@ -59,8 +59,8 @@ const Post = () => {
           <div className='flex items-center'>
             <Icon
               icon='wpf:like'
-        className=
-        {`text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6 ${likeColor}`}
+        className='
+        '
         onClick={handleLike}
             />
             <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>

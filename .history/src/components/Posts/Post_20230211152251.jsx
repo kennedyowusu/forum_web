@@ -6,7 +6,7 @@ const Post = () => {
   const [like, setLike] = useState(false)
   const [comment, setComment] = useState('')
 
-  const likeColor = like ? 'text-blue-500' : 'text-gray-500'
+  const likeColor = like ? 'text-gray-500' : 'text-gray-500'
 
   const handleLike = () => {
     like ? setLike(false) : setLike(true)

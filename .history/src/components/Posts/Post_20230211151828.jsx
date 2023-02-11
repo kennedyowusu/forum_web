@@ -6,10 +6,8 @@ const Post = () => {
   const [like, setLike] = useState(false)
   const [comment, setComment] = useState('')
 
-  const likeColor = like ? 'text-blue-500' : 'text-gray-500'
-
   const handleLike = () => {
-    like ? setLike(false) : setLike(true)
+    setLike(!like)
   }
 
  const checkEmptyField = () => {
@@ -20,15 +18,13 @@ const Post = () => {
  }
 
   const handleComment = () => {
-   if (checkEmptyField()) {
-    return
-   }
-
+   // validate
+   
    setComment('')
   }
 
   return (
-    <div className='rounded-md px-1 py-5'>
+    <div className='rounded-md px-1'>
       {/* Post Header */}
       <div className='flex items-center'>
         <div className=''>
@@ -59,14 +55,10 @@ const Post = () => {
           <div className='flex items-center'>
             <Icon
               icon='wpf:like'
-        className=
-        {`text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6 ${likeColor}`}
-        onClick={handleLike}
+              className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6'
             />
             <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
-        <span className='font-bold'>
-          {like ? '1' : '0'}
-              </span> Likes
+              <span className='font-bold'>2</span> Likes
             </p>
           </div>
 

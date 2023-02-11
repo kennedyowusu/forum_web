@@ -60,7 +60,7 @@ const Post = () => {
             <Icon
               icon='wpf:like'
         className=
-        {`text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6 ${likeColor}`}
+        
         onClick={handleLike}
             />
             <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>

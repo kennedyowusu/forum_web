@@ -1,34 +1,10 @@
-import { useState } from 'react'
+import React from 'react'
 import Logo from '../../assets/forum.png'
 import { Icon } from '@iconify/react'
 
 const Post = () => {
-  const [like, setLike] = useState(false)
-  const [comment, setComment] = useState('')
-
-  const likeColor = like ? 'text-blue-500' : 'text-gray-500'
-
-  const handleLike = () => {
-    like ? setLike(false) : setLike(true)
-  }
-
- const checkEmptyField = () => {
-  if (comment.trim() === '') {
-   return true
-  }
-  return false
- }
-
-  const handleComment = () => {
-   if (checkEmptyField()) {
-    return
-   }
-
-   setComment('')
-  }
-
   return (
-    <div className='rounded-md px-1 py-5'>
+    <div className='rounded-md px-1'>
       {/* Post Header */}
       <div className='flex items-center'>
         <div className=''>
@@ -59,14 +35,10 @@ const Post = () => {
           <div className='flex items-center'>
             <Icon
               icon='wpf:like'
-        className=
-        {`text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6 ${likeColor}`}
-        onClick={handleLike}
+              className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6'
             />
             <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
-        <span className='font-bold'>
-          {like ? '1' : '0'}
-              </span> Likes
+              <span className='font-bold'>2</span> Likes
             </p>
           </div>
 
@@ -96,25 +68,13 @@ const Post = () => {
           <div className=''>
             <img className='rounded-full h-12 w-12' src={Logo} alt='Profile' />
           </div>
-          <div className='flex items-center justify-between'>
-            <div className='mx-3'>
-              <input
-                type='text'
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-                className='w-full rounded-md py-2 px-4 outline-0 bg-[#f2f3f7] pl-3 h-12
-                 md:pl-3 md:h-12 md:rounded-md md:p-1 md:mr-1 md:w-[25rem]
-                '
-                placeholder='Add a comment...'
-              />
-            </div>
-            <div className='mr-5'>
-              <Icon
-                onClick={handleComment}
-                icon='material-symbols:send'
-                className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1  rounded-full h-12 w-12'
-              />
-            </div>
+          <div className='ml-3'>
+            {/* <p className='font-bold'>Kennedy</p>
+            <p className='text-gray-500 text-sm '>2 hours ago</p> */}
+            <input
+              type='text'
+              className='w-full border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-0 bg-[#f2f3f7] w-[36rem] pl-3 h-12  rounded-md p-1  '
+            />
           </div>
         </div>
       </div>

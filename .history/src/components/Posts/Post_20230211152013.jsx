@@ -6,8 +6,6 @@ const Post = () => {
   const [like, setLike] = useState(false)
   const [comment, setComment] = useState('')
 
-  const likeColor = like ? 'text-blue-500' : 'text-gray-500'
-
   const handleLike = () => {
     like ? setLike(false) : setLike(true)
   }
@@ -59,9 +57,8 @@ const Post = () => {
           <div className='flex items-center'>
             <Icon
               icon='wpf:like'
-        className=
-        {`text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6 ${likeColor}`}
-        onClick={handleLike}
+        className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6'
+        onClick={}
             />
             <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
         <span className='font-bold'>

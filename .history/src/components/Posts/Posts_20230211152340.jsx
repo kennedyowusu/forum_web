@@ -9,8 +9,9 @@ const Posts = () => {
     >
       <div
         className='mx-0 sm:max-w-[25rem] md:max-w-[40rem] lg:w-full bg-white flex flex-col w-full p-3 rounded-md
-    shadow-md border border-[#f2f3f7]'
+    shadow-md border border-[#f2f3f7] mb-5'
       >
+        <Post />
         <Post />
       </div>
     </div>
