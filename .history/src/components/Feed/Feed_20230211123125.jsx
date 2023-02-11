@@ -1,7 +1,7 @@
 import React from 'react'
 import CreateFeed from './CreateFeed'
 import LeftSide from './LeftSide'
-import Posts from '../Posts/Posts'
+import Post from './Posts'
 
 const Feed = () => {
   return (
@@ -11,7 +11,7 @@ const Feed = () => {
       <div className='mx-auto'>
         {/* <Trends /> */}
         <CreateFeed />
-        <Posts />
+        <Post />
       </div>
 
       {/* Stories */}

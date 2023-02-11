@@ -1,7 +1,7 @@
 import React from 'react'
 import CreateFeed from './CreateFeed'
 import LeftSide from './LeftSide'
-import Posts from '../Posts/Posts'
+import Posts from './Posts'
 
 const Feed = () => {
   return (

@@ -11,7 +11,7 @@ const Feed = () => {
       <div className='mx-auto'>
         {/* <Trends /> */}
         <CreateFeed />
-        <Posts />
+        {/* <Posts /> */}
       </div>
 
       {/* Stories */}

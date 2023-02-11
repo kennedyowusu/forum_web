@@ -3,12 +3,12 @@ import React from 'react'
 const CreateFeed = () => {
   return (
     <div
-      className='flex ml-8 px-4 py-3 sm:px-4 md:px-4 -my-2'
+      className='flex px-4 py-3 border-b sm:px-4 md:px-4'
     >
       <div className='w-screen sm:w-full flex justify-center items'>
         <div
           className='sm:max-w-[25rem] md:max-w-[40rem] lg:w-full my-8 bg-white flex flex-col w-full p-3 rounded-md
-    shadow-md border border-[#f2f3f7]
+    shadow-md 
       '
         >
           <div className='flex items-center mx-5 h-16 mt-2'>

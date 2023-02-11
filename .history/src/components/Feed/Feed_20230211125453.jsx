@@ -8,7 +8,7 @@ const Feed = () => {
     <div className='flex h-screen sm:w-full'>
       {/* Left Side Feed */}
       <LeftSide />
-      <div className='mx-auto'>
+      <div className=''>
         {/* <Trends /> */}
         <CreateFeed />
         <Posts />
