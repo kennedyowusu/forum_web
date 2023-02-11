@@ -28,8 +28,6 @@ const Post = () => {
     <div className='mt-3'>
      
     </div>
-    
-    </div>
   )
 }
 

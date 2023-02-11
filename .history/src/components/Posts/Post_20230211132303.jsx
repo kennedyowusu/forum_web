@@ -15,20 +15,14 @@ const Post = () => {
         </div>
       </div>
       {/* Post Title */}
-    <div className='mt-3'>
-     <p className='font-bold text-lg '>Lorem ipsum dolor sit amet.</p>
+      <div className='mt-3'>
+        <p className='text-gray-500 text-sm '>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+          quod.
+        </p>
     </div>
-
-    {/* Post Body */}
-    <div className='mt-3'>
-     <p className='text-gray-500 text-sm '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-    </div>
-      
-    {/* Post Footer */}
-    <div className='mt-3'>
-     
-    </div>
-    
+      {/* Post Body */}
+      {/* Post Footer */}
     </div>
   )
 }

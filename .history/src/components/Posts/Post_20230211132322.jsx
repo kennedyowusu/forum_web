@@ -24,11 +24,7 @@ const Post = () => {
      <p className='text-gray-500 text-sm '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
     </div>
       
-    {/* Post Footer */}
-    <div className='mt-3'>
-     
-    </div>
-    
+      {/* Post Footer */}
     </div>
   )
 }

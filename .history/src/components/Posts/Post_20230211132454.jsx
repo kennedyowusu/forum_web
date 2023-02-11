@@ -25,9 +25,6 @@ const Post = () => {
     </div>
       
     {/* Post Footer */}
-    <div className='mt-3'>
-     
-    </div>
     
     </div>
   )

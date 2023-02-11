@@ -26,9 +26,8 @@ const Post = () => {
       
     {/* Post Footer */}
     <div className='mt-3'>
-     
-    </div>
-    
+     <p className='text-gray-500 text-sm '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+     </div>
     </div>
   )
 }
