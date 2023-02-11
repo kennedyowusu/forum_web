@@ -12,7 +12,7 @@ const Posts = () => {
     shadow-md border border-[#f2f3f7]'
       >
         <Post />
-        {/* <Post /> */}
+        <Post />
       </div>
     </div>
   )

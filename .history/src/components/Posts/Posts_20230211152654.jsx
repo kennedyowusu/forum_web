@@ -4,7 +4,7 @@ import Post from './Post'
 const Posts = () => {
   return (
     <div
-      className='flex ml-7 px-4 py-3 sm:px-4 md:px-4 -my-2
+      className='flex ml-7 px-4 py-3 sm:px-4 md:px-4 -my-2 mb-10
     '
     >
       <div
@@ -12,7 +12,6 @@ const Posts = () => {
     shadow-md border border-[#f2f3f7]'
       >
         <Post />
-        {/* <Post /> */}
       </div>
     </div>
   )

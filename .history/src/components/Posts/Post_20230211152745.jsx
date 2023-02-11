@@ -28,7 +28,7 @@ const Post = () => {
   }
 
   return (
-    <div className='rounded-md px-1'>
+    <div className='rounded-md px-1 m'>
       {/* Post Header */}
       <div className='flex items-center'>
         <div className=''>

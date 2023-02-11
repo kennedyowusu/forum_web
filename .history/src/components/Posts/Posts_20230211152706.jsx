@@ -4,7 +4,7 @@ import Post from './Post'
 const Posts = () => {
   return (
     <div
-      className='flex ml-7 px-4 py-3 sm:px-4 md:px-4 -my-2
+      className='pb-t flex ml-7 px-4 py-3 sm:px-4 md:px-4 -my-2
     '
     >
       <div
