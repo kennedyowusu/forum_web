@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Logo from '../../assets/forum.png'
 import { Icon } from '@iconify/react'
+import { Link } from 'react-router-dom'
 import { readPostActions, selectPosts } from '../../redux/slices/post/readPostSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -9,7 +10,7 @@ const Post = () => {
   const [comment, setComment] = useState('')
 
  const dispatch = useDispatch()
- const { loading, success, posts, errorMessage, errorStrings } = useSelector(selectPosts);
+ const posts = useSelector(selectPosts)
 
  useEffect(() => {
   dispatch(readPostActions.readPosts())
@@ -68,11 +69,14 @@ const Post = () => {
           <div className='flex items-center'>
             <Icon
               icon='wpf:like'
-              className={`text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6 ${likeColor}`}
-              onClick={handleLike}
+        className=
+        {`text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6 ${likeColor}`}
+        onClick={handleLike}
             />
             <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
-              <span className='font-bold'>{like ? '1' : '0'}</span> Likes
+        <span className='font-bold'>
+          {like ? '1' : '0'}
+              </span> Likes
             </p>
           </div>
 
