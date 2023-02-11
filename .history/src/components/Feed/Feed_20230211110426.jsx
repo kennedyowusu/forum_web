@@ -5,7 +5,7 @@ import Trends from './Trends'
 
 const Feed = () => {
   return (
-    <div className='flex h-screen sm:w-full'>
+    <div className='flex h-screen w-[30rem] sm:w-full'>
       {/* Left Side Feed */}
       <LeftSide />
       <div className='mx-auto'>

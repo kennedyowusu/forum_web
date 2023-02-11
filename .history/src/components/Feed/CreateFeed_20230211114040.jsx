@@ -6,7 +6,7 @@ const CreateFeed = () => {
     <div className='w-screen sm:w-full flex justify-center items'>
       <div
         className='sm:max-w-[25rem] md:max-w-[40rem] lg:w-full my-8 bg-white flex flex-col w-full p-3 rounded-md
-    shadow-md border border-[#f2f3f7]
+    shadow-md border border-[#f2f3f7 
       '
       >
         <div className='flex items-center mx-5 h-16 mt-2'>
