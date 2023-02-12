@@ -52,6 +52,9 @@ const readPostSlice = createSlice({
  }
 });
 
+// export const { readPosts } = readPostSlice.actions;
+// export default readPostSlice.reducer;
+
 export default readPostSlice.reducer;
 
 export const readPostActions = readPostSlice.actions

@@ -7,7 +7,7 @@ const store = configureStore({
  reducer: {
   register,
   login,
-  post,
+  readPostSlice,
  },
 });
 

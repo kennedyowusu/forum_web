@@ -4,7 +4,7 @@ import { get } from "../../../utils/axiosInstance";
 export const readPosts = createAsyncThunk(
  "post/readPosts",
  async (data, thunkAPI) => {
-  const response = await get("feeds");
+  const response = await get("/feeds");
   try {
    if (response.status === 200) {
     return response.data;
@@ -51,6 +51,9 @@ const readPostSlice = createSlice({
   });
  }
 });
+
+// export const { readPosts } = readPostSlice.actions;
+// export default readPostSlice.reducer;
 
 export default readPostSlice.reducer;
 

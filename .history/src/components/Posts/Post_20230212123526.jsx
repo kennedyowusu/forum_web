@@ -129,6 +129,7 @@ const Post = () => {
             </div>
             <div className='mr-5'>
               <Icon
+                // onClick={handleComment}
                 onClick={checkEmptyComment}
                 icon='material-symbols:send'
                 className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1  rounded-full h-12 w-12'

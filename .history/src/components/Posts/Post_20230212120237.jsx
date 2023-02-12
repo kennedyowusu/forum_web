@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react'
 import {
   readPosts,
   selectPosts,
+  readPostSlice,
 } from '../../redux/slices/post/readPostSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -12,14 +13,14 @@ const Post = () => {
   const [comment, setComment] = useState('')
 
   const dispatch = useDispatch()
-  const { posts } = useSelector(selectPosts);
+  const { loading, success, posts, errorMessage, errorStrings } = useSelector(selectPosts);
 
   useEffect(() => {
     dispatch(readPosts())
     if (posts) {
-      console.log(posts)
+      return posts;
     } else {
-      console.log('posts is undefined')
+      
     }
   }, [dispatch, posts])
 
@@ -129,6 +130,7 @@ const Post = () => {
             </div>
             <div className='mr-5'>
               <Icon
+                // onClick={handleComment}
                 onClick={checkEmptyComment}
                 icon='material-symbols:send'
                 className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1  rounded-full h-12 w-12'

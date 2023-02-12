@@ -4,7 +4,7 @@ import { get } from "../../../utils/axiosInstance";
 export const readPosts = createAsyncThunk(
  "post/readPosts",
  async (data, thunkAPI) => {
-  const response = await get("feeds");
+  const response = await get("/posts");
   try {
    if (response.status === 200) {
     return response.data;
@@ -46,15 +46,13 @@ const readPostSlice = createSlice({
   builder.addCase(readPosts.rejected, (state, action) => {
    state.loading = false;
    state.success = false;
-   state.errorMessage = action?.payload?.message || "Something went wrong";
-   state.errorStrings = Object.values(action?.payload?.errors || []).flat()
+   state.errorMessage = action.payload.message || "Something went wrong";
+   state.errorStrings = Object.values(action.payload.errors || []).flat();
   });
  }
 });
 
 export default readPostSlice.reducer;
-
-export const readPostActions = readPostSlice.actions
 
 export const selectPosts = (state) => state.post.posts;
 export const selectLoading = (state) => state.post.loading;
@@ -62,25 +60,4 @@ export const selectSuccess = (state) => state.post.success;
 export const selectErrorMessage = (state) => state.post.errorMessage;
 export const selectErrorStrings = (state) => state.post.errorStrings;
 
-// export const selectPost = (state, postId) =>
-//  state.post.posts.find((post) => post.id === postId);
-
-// export const selectPostComments = (state, postId) =>
-//  state.post.posts.find((post) => post.id === postId).comments;
-
-// export const selectPostLikes = (state, postId) =>
-//  state.post.posts.find((post) => post.id === postId).likes;
-
-// export const selectPostCommentsCount = (state, postId) =>
-//  state.post.posts.find((post) => post.id === postId).comments.length;
-
-// export const selectPostLikesCount = (state, postId) =>
-//  state.post.posts.find((post) => post.id === postId).likes.length;
-
-// export const selectPostLiked = (state, postId) =>
-//  state.post.posts.find((post) => post.id === postId).liked;
-
-// export const selectPostCommented = (state, postId) =>
-//  state.post.posts.find((post) => post.id === postId).commented;
-
-
+export const readPostActions = readPostSlice.actions

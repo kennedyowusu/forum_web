@@ -1,27 +1,22 @@
 import { useState, useEffect } from 'react'
 import Logo from '../../assets/forum.png'
 import { Icon } from '@iconify/react'
-import {
-  readPosts,
-  selectPosts,
-} from '../../redux/slices/post/readPostSlice'
+import { readPostActions, selectPosts } from '../../redux/slices/post/readPostSlice'
 import { useDispatch, useSelector } from 'react-redux'
+
+import { readPostSlice } from "./readPostSlice";
+import { readPosts } from '../../redux/slices/post/readPostSlice'
 
 const Post = () => {
   const [like, setLike] = useState(false)
   const [comment, setComment] = useState('')
 
   const dispatch = useDispatch()
-  const { posts } = useSelector(selectPosts);
+  const { loading, success, posts, errorMessage, errorStrings } = useSelector(selectPosts);
 
   useEffect(() => {
     dispatch(readPosts())
-    if (posts) {
-      console.log(posts)
-    } else {
-      console.log('posts is undefined')
-    }
-  }, [dispatch, posts])
+  }, [dispatch])
 
   const likeColor = like ? 'text-blue-500' : 'text-gray-500'
 
@@ -36,13 +31,13 @@ const Post = () => {
     return false
   }
 
-  // const handleComment = () => {
-  //   if (checkEmptyField()) {
-  //     return
-  //   }
+  const handleComment = () => {
+    if (checkEmptyField()) {
+      return
+    }
 
-  //   setComment('')
-  // }
+    setComment('')
+  }
 
   function checkEmptyComment(comment) {
   return comment.trim() === '';
@@ -122,13 +117,14 @@ const Post = () => {
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 className='w-full rounded-md py-2 px-4 outline-0 bg-[#f2f3f7] pl-3 h-12
-                  md:pl-3 md:h-12 md:rounded-md md:p-1 md:mr-1 md:w-[25rem]
+                 md:pl-3 md:h-12 md:rounded-md md:p-1 md:mr-1 md:w-[25rem]
                 '
                 placeholder='Add a comment...'
               />
             </div>
             <div className='mr-5'>
               <Icon
+                // onClick={handleComment}
                 onClick={checkEmptyComment}
                 icon='material-symbols:send'
                 className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1  rounded-full h-12 w-12'

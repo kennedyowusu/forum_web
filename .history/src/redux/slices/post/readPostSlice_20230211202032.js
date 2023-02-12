@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { get } from "../../../utils/axiosInstance";
+import AxiosInstance from "../../../utils/axiosInstance";
 
 export const readPosts = createAsyncThunk(
  "post/readPosts",
  async (data, thunkAPI) => {
-  const response = await get("feeds");
+  const response = await get("/posts");
   try {
    if (response.status === 200) {
     return response.data;
@@ -46,15 +46,13 @@ const readPostSlice = createSlice({
   builder.addCase(readPosts.rejected, (state, action) => {
    state.loading = false;
    state.success = false;
-   state.errorMessage = action?.payload?.message || "Something went wrong";
-   state.errorStrings = Object.values(action?.payload?.errors || []).flat()
+   state.errorMessage = action.payload.message || "Something went wrong";
+   state.errorStrings = Object.values(action.payload.errors || []).flat();
   });
  }
 });
 
 export default readPostSlice.reducer;
-
-export const readPostActions = readPostSlice.actions
 
 export const selectPosts = (state) => state.post.posts;
 export const selectLoading = (state) => state.post.loading;
@@ -83,4 +81,4 @@ export const selectErrorStrings = (state) => state.post.errorStrings;
 // export const selectPostCommented = (state, postId) =>
 //  state.post.posts.find((post) => post.id === postId).commented;
 
-
+export const readPostActions = readPostSlice.actions;
