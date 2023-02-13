@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectPost, createPost } from '../../redux/slices/post/createPostSlice'
-import { Icon } from '@iconify/react'
-import { toast } from 'react-toastify'
-import handleInputError from '../../utils/handleInputError'
 
 const CreateFeed = () => {
   const [title, setTitle] = useState('')
@@ -11,34 +8,23 @@ const CreateFeed = () => {
   const [error, setError] = useState('')
 
   const dispatch = useDispatch()
-  const { loading = false, success, post, errorMessage, errorDetails } =
-    useSelector(selectPost) || {}
-
-  useEffect(() => {
-    if (success) {
-      toast.success('Post created successfully')
-    } else if (errorMessage) {
-      toast.error(errorMessage)
-    }
-  }, [success, errorMessage])
+  const { post, loading} = useSelector(selectPost)
 
   const handleSubmit = (e) => {
     e.preventDefault()
     setError('')
-
-    const error = handleInputError(title, description)
-    if (error) {
-      setError(error)
+    if (!title || !description) {
+      setError('All fields are required')
       return
     }
 
-    console.log('Dispatching action:', createPost(title, description))
-    dispatch(createPost(title, description))
+    dispatch(createPost({ title, description }))
 
     setTitle('')
     setDescription('')
-  }
 
+    console.log(title, description)
+  }
   return (
     <div className='flex mx-2 px-4 py-3 sm:px-4 md:px-4 -my-2'>
       <div className='w-screen sm:w-full flex justify-center items'>
@@ -94,20 +80,10 @@ const CreateFeed = () => {
             </div>
             {error && <div className='mb-4 text-red-500 text-sm'>{error}</div>}
             <button
-              disabled={ loading }
               type='submit'
               className='bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600'
             >
-              <div className='flex items-center justify-center'>
-                {loading ? (
-                  <>
-                    <Icon icon='mdi:loading' className='animate-spin' />
-                    <span className='ml-2'>Loading...</span>
-                  </>
-                ) : (
-                  'Create Post'
-                )}
-              </div>
+              Post
             </button>
           </form>
         </div>

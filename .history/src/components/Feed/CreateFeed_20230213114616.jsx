@@ -1,44 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { selectPost, createPost } from '../../redux/slices/post/createPostSlice'
-import { Icon } from '@iconify/react'
-import { toast } from 'react-toastify'
-import handleInputError from '../../utils/handleInputError'
+import React, { useState } from 'react'
 
 const CreateFeed = () => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [error, setError] = useState('')
 
-  const dispatch = useDispatch()
-  const { loading = false, success, post, errorMessage, errorDetails } =
-    useSelector(selectPost) || {}
-
-  useEffect(() => {
-    if (success) {
-      toast.success('Post created successfully')
-    } else if (errorMessage) {
-      toast.error(errorMessage)
-    }
-  }, [success, errorMessage])
-
   const handleSubmit = (e) => {
     e.preventDefault()
     setError('')
-
-    const error = handleInputError(title, description)
-    if (error) {
-      setError(error)
+    if (!title || !description) {
+      setError('All fields are required')
       return
     }
 
-    console.log('Dispatching action:', createPost(title, description))
-    dispatch(createPost(title, description))
-
     setTitle('')
     setDescription('')
-  }
 
+    console.log(title, description)
+  }
   return (
     <div className='flex mx-2 px-4 py-3 sm:px-4 md:px-4 -my-2'>
       <div className='w-screen sm:w-full flex justify-center items'>
@@ -47,13 +26,55 @@ const CreateFeed = () => {
     shadow-md border border-[#f2f3f7]
       '
         >
+          {/* <div className='flex items-center mx-5 h-16 mt-2'>
+            <input
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value)
+                setError('')
+              }}
+              type='text'
+              placeholder='Enter Title...'
+              className='outline-0 bg-[#f2f3f7] w-[36rem] pl-3 h-12  rounded-md p-1'
+            />
+          </div>
+
+          <div className='flex items-center mx-5 h-24 rounded-md'>
+            <textarea
+              value={description}
+              onChange={(e) => {
+                setDescription(e.target.value)
+                setError('')
+              }}
+              placeholder='Enter Description...'
+              rows='4'
+              cols='60'
+              className='outline-0 bg-[#f2f3f7] pl-3 h-20  rounded-md p-1'
+            />
+          </div>
+          {error && (
+            <div className='text-red-500 text-sm text-center'>
+              <p>{error}</p>
+            </div>
+          )}
+          <div className='text-right mr-5 mt-2'>
+            <button
+              onClick={handleSubmit}
+              type='submit'
+              className='bg-[#f2f3f7] w-28 h-10 rounded-md
+      text-[#1da1f2] font-bold hover:bg-[#1da1f2] hover:text-white
+          '
+            >
+              Post
+            </button>
+          </div> */}
           <form
             onSubmit={handleSubmit}
             className='
-            w-full rounded-lg p-2 flex flex-col
+              
             '
           >
-            <h2 className='text-lg mb-4'>Create a New Feed</h2>
+            <h2 className='text-lg font-medium mb-4'>Create a New Feed</h2>
             <div className='mb-4'>
               <label
                 htmlFor='title'
@@ -94,20 +115,10 @@ const CreateFeed = () => {
             </div>
             {error && <div className='mb-4 text-red-500 text-sm'>{error}</div>}
             <button
-              disabled={ loading }
               type='submit'
               className='bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600'
             >
-              <div className='flex items-center justify-center'>
-                {loading ? (
-                  <>
-                    <Icon icon='mdi:loading' className='animate-spin' />
-                    <span className='ml-2'>Loading...</span>
-                  </>
-                ) : (
-                  'Create Post'
-                )}
-              </div>
+              Post
             </button>
           </form>
         </div>

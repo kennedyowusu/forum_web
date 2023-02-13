@@ -32,11 +32,9 @@ const CreateFeed = () => {
       return
     }
 
-    console.log('Dispatching action:', createPost(title, description))
-    dispatch(createPost(title, description))
-
-    setTitle('')
-    setDescription('')
+    console.log('Dispatching action:', createFeed(title, description))
+    dispatch(createFeed(title, description))
+    
   }
 
   return (

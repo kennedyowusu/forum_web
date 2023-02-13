@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectPost, createPost } from '../../redux/slices/post/createPostSlice'
 import { Icon } from '@iconify/react'
 import { toast } from 'react-toastify'
-import handleInputError from '../../utils/handleInputError'
+import handleInputError from '../../utils'
 
 const CreateFeed = () => {
   const [title, setTitle] = useState('')
@@ -31,12 +31,7 @@ const CreateFeed = () => {
       setError(error)
       return
     }
-
-    console.log('Dispatching action:', createPost(title, description))
-    dispatch(createPost(title, description))
-
-    setTitle('')
-    setDescription('')
+    
   }
 
   return (

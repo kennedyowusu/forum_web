@@ -37,6 +37,7 @@ const CreateFeed = () => {
 
     setTitle('')
     setDescription('')
+    
   }
 
   return (

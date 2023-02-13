@@ -36,7 +36,8 @@ const CreateFeed = () => {
     dispatch(createPost(title, description))
 
     setTitle('')
-    setDescription('')
+    
+    
   }
 
   return (

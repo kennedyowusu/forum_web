@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectPost, createPost } from '../../redux/slices/post/createPostSlice'
 import { Icon } from '@iconify/react'
 import { toast } from 'react-toastify'
-import handleInputError from '../../utils/handleInputError'
 
 const CreateFeed = () => {
   const [title, setTitle] = useState('')
@@ -12,7 +11,7 @@ const CreateFeed = () => {
 
   const dispatch = useDispatch()
   const { loading = false, success, post, errorMessage, errorDetails } =
-    useSelector(selectPost) || {}
+    useSelector(selectPost)
 
   useEffect(() => {
     if (success) {
@@ -25,15 +24,28 @@ const CreateFeed = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setError('')
-
-    const error = handleInputError(title, description)
-    if (error) {
-      setError(error)
+    if (!title || !description) {
+      setError('Both title and description are required')
+      return
+    }
+    if (title.length < 5) {
+      setError('Title must be at least 5 characters long')
+      return
+    }
+    if (title.length > 50) {
+      setError('Title must be less than 50 characters long')
+      return
+    }
+    if (description.length < 10) {
+      setError('Description must be at least 10 characters long')
+      return
+    }
+    if (description.length > 250) {
+      setError('Description must be less than 250 characters long')
       return
     }
 
-    console.log('Dispatching action:', createPost(title, description))
-    dispatch(createPost(title, description))
+    dispatch(createPost({ title, description }))
 
     setTitle('')
     setDescription('')

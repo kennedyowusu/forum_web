@@ -28,15 +28,7 @@ const CreateFeed = () => {
 
     const error = handleInputError(title, description)
     if (error) {
-      setError(error)
-      return
-    }
-
-    console.log('Dispatching action:', createPost(title, description))
-    dispatch(createPost(title, description))
-
-    setTitle('')
-    setDescription('')
+    
   }
 
   return (

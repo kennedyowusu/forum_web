@@ -35,8 +35,8 @@ const CreateFeed = () => {
     console.log('Dispatching action:', createPost(title, description))
     dispatch(createPost(title, description))
 
-    setTitle('')
-    setDescription('')
+    
+    
   }
 
   return (
