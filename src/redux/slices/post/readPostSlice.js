@@ -39,7 +39,7 @@ const readPostSlice = createSlice({
   builder.addCase(readPosts.fulfilled, (state, action) => {
    state.loading = false;
    state.success = true;
-   state.posts = action.payload.posts;
+   state.posts = action.payload.feeds;
    state.errorMessage = "";
    state.errorStrings = [];
   });
