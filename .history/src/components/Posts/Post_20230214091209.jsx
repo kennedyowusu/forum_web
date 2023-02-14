@@ -10,6 +10,7 @@ import FeedComments from '../comments/FeedComments'
 
 const Post = () => {
   const [like, setLike] = useState(false)
+  
 
   const dispatch = useDispatch()
   const { posts } = useSelector(selectPosts);
@@ -28,6 +29,24 @@ const Post = () => {
   const handleLike = () => {
     like ? setLike(false) : setLike(true)
   }
+
+  const checkEmptyField = () => {
+    if (comment.trim() === '') {
+    return true
+    }
+    return false
+  }
+
+  // const handleComment = () => {
+  //   if (checkEmptyField()) {
+  //     return
+  //   }
+
+  //   setComment('')
+  // }
+
+  
+
 
   return (
     <div className='rounded-md px-1'>

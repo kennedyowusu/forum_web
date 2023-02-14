@@ -6,10 +6,11 @@ import {
   selectPosts,
 } from '../../redux/slices/post/readPostSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import FeedComments from '../comments/FeedComments'
+import { selectComments } from '../../redux/slices/comment/readComment'
 
 const Post = () => {
   const [like, setLike] = useState(false)
+  const [comment, setComment] = useState('')
 
   const dispatch = useDispatch()
   const { posts } = useSelector(selectPosts);
@@ -28,6 +29,26 @@ const Post = () => {
   const handleLike = () => {
     like ? setLike(false) : setLike(true)
   }
+
+  const checkEmptyField = () => {
+    if (comment.trim() === '') {
+    return true
+    }
+    return false
+  }
+
+  // const handleComment = () => {
+  //   if (checkEmptyField()) {
+  //     return
+  //   }
+
+  //   setComment('')
+  // }
+
+  function checkEmptyComment(comment) {
+  return comment.trim() === '';
+}
+
 
   return (
     <div className='rounded-md px-1'>
@@ -114,7 +135,14 @@ const Post = () => {
       </div>
 
       {/* Comment Section */}
-      <FeedComments />
+      <div className='mt-3'>
+        <div className='flex items-center'>
+          <div className=''>
+            <img className='rounded-full h-12 w-12' src={Logo} alt='Profile' />
+          </div>
+          <form action=""></form>
+        </div>
+      </div>
     </div>
   )
 }

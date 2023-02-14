@@ -10,6 +10,7 @@ import FeedComments from '../comments/FeedComments'
 
 const Post = () => {
   const [like, setLike] = useState(false)
+  
 
   const dispatch = useDispatch()
   const { posts } = useSelector(selectPosts);

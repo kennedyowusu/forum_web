@@ -13,7 +13,7 @@ const store = configureStore({
     post,
     createPost: createPostSlice,
     comment: readComment,
-    createComment: createCommentSlice
+    createComment: createComment
   },
 })
 

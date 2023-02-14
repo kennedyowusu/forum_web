@@ -4,7 +4,7 @@ import login from './authentication/loginSlice';
 import post from './slices/post/readPostSlice';
 import createPostSlice from './slices/post/createPostSlice'
 import readComment from './slices/comment/readComment'
-import createCommentSlice from './slices/comment/createComment'
+import createComment from './slices/comment/createComment'
   
 const store = configureStore({
   reducer: {
@@ -13,7 +13,7 @@ const store = configureStore({
     post,
     createPost: createPostSlice,
     comment: readComment,
-    createComment: createCommentSlice
+    
   },
 })
 
