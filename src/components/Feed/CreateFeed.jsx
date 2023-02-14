@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectPost, createPost } from '../../redux/slices/post/createPostSlice'
+import { createPost, selectCreatePostState } from '../../redux/slices/post/createPostSlice'
 import { Icon } from '@iconify/react'
 import { toast } from 'react-toastify'
 import handleInputError from '../../utils/handleInputError'
+import { readPosts } from '../../redux/slices/post/readPostSlice'
 
 const CreateFeed = () => {
   const [title, setTitle] = useState('')
@@ -11,12 +12,18 @@ const CreateFeed = () => {
   const [error, setError] = useState('')
 
   const dispatch = useDispatch()
-  const { loading = false, success, post, errorMessage, errorDetails } =
-    useSelector(selectPost) || {}
+  const {
+    loading,
+    success,
+    post,
+    errorMessage,
+    errorDetails,
+  } = useSelector(selectCreatePostState) || {}
 
   useEffect(() => {
     if (success) {
       toast.success('Post created successfully')
+      dispatch(readPosts())
     } else if (errorMessage) {
       toast.error(errorMessage)
     }
@@ -33,7 +40,12 @@ const CreateFeed = () => {
     }
 
     console.log('Dispatching action:', createPost(title, description))
-    dispatch(createPost(title, description))
+    dispatch(
+      createPost({
+        title,
+        description,
+      })
+    )
 
     setTitle('')
     setDescription('')
@@ -94,7 +106,7 @@ const CreateFeed = () => {
             </div>
             {error && <div className='mb-4 text-red-500 text-sm'>{error}</div>}
             <button
-              disabled={ loading }
+              disabled={loading}
               type='submit'
               className='bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600'
             >

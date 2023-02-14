@@ -28,7 +28,7 @@ const initialState = {
 }
 
 const createPostSlice = createSlice({
-  name: 'post',
+  name: 'createPost',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -61,4 +61,4 @@ export default createPostSlice.reducer
 
 export const createPostActions = createPostSlice.actions
 
-export const selectPost = (state) => state.post.post
+export const selectCreatePostState = (state) => state.createPost
