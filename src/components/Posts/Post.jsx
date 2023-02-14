@@ -66,7 +66,7 @@ const Post = ({ post }) => {
                   className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6'
                 />
                 <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
-                  <span className='font-bold'>{post.comments_count}</span>{' '}
+                  <span className='font-bold'>{post.comments.length}</span>{' '}
                   Comments
                 </p>
               </div>
@@ -109,7 +109,7 @@ const Post = ({ post }) => {
           <div className='border-b mt-3'></div>
 
           {/* Comment Section */}
-          <FeedComments />
+          <FeedComments feedId={post.id} />
         </div>
       </div>
     </>

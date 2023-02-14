@@ -1,13 +1,20 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { post } from '../../../utils/axiosInstance'
+import { updatePostComments } from '../post/readPostSlice'
 
 export const createComment = createAsyncThunk(
   'comment/createComment',
   async (commentData, thunkAPI) => {
-    const { feedId, content } = commentData
-    const response = await post(`feed/comment/${feedId}`, { content })
+    const { feedId, comment } = commentData
+    const response = await post(`feed/comment/${feedId}`, { body: comment })
     try {
       if (response.status === 201) {
+        thunkAPI.dispatch(
+          updatePostComments({
+            postId: feedId,
+            comments: response.data.comments,
+          })
+        )
         return response.data
       } else {
         return thunkAPI.rejectWithValue(response.data)
@@ -21,7 +28,6 @@ export const createComment = createAsyncThunk(
 const initialState = {
   loading: false,
   success: false,
-  comment: {},
   errorMessage: '',
   errorDetails: [],
 }
@@ -37,10 +43,9 @@ const createCommentSlice = createSlice({
       state.errorMessage = ''
       state.errorDetails = []
     })
-    builder.addCase(createComment.fulfilled, (state, action) => {
+    builder.addCase(createComment.fulfilled, (state) => {
       state.loading = false
       state.success = true
-      state.comment = action.payload
       state.errorMessage = ''
       state.errorDetails = []
     })
@@ -60,6 +65,4 @@ export default createCommentSlice.reducer
 
 export const createCommentActions = createCommentSlice.actions
 
-export const selectComment = (state) => state.createComment.comment
-
-export const selectCommentLoading = (state) => state.createComment.loading
+export const selectCreateComment = (state) => state.createComment

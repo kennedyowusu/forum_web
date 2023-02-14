@@ -28,7 +28,13 @@ const initialState = {
 const readPostSlice = createSlice({
  name: "post",
  initialState,
- reducers: {},
+ reducers: {
+  updatePostComments: (state, action) => {
+   const { postId, comments } = action.payload;
+   const post = state.posts.find((post) => post.id === postId);
+   post.comments = comments;
+  }
+ },
  extraReducers: (builder) => {
   builder.addCase(readPosts.pending, (state) => {
    state.loading = true;
@@ -55,6 +61,8 @@ const readPostSlice = createSlice({
 export default readPostSlice.reducer;
 
 export const readPostActions = readPostSlice.actions
+
+export const { updatePostComments } = readPostSlice.actions;
 
 export const selectPosts = (state) => state.post.posts;
 export const selectLoading = (state) => state.post.loading;

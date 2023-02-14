@@ -1,59 +1,50 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { selectComments, readComments } from '../../redux/slices/comment/readComment'
 import { useDispatch, useSelector } from 'react-redux'
 import Logo from '../../assets/forum.png'
 import { Icon } from '@iconify/react'
 import { toast } from 'react-toastify'
+import { createComment, selectCreateComment } from '../../redux/slices/comment/createComment'
 
-const FeedComments = () => {
- const [comment, setComment] = useState('')
- const [error, setError] = useState('')
+const FeedComments = ({ feedId }) => {
+  const [comment, setComment] = useState('')
+  const [error, setError] = useState('')
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const dispatch = useDispatch()
-  const { loading, success, comments, errorMessage } = useSelector(selectComments)
+  const { loading, success, errorMessage } =
+    useSelector(selectCreateComment)
 
- useEffect(() => {
-  if (success) {
-   toast.success('Comment created successfully')
-  } else if (errorMessage) {
-   toast.error(errorMessage)
-  }
- }, [success, errorMessage])
-
- // useEffect(() => {
- //  dispatch(readComments())
- //  if (comments) {
- //   console.log(comments)
- //  } else {
- //   console.log('comments is undefined')
- //  }
- // }, [dispatch, comments])
-
-  // const handleComment = () => {
-  //   if (checkEmptyField()) {
-  //     return
-  //   }
-
-  //   setComment('')
-  // }
+  useEffect(() => {
+    if (success && isSubmitted) {
+      toast.success('Comment created successfully')
+      setIsSubmitted(false)
+    } else if (errorMessage) {
+      toast.error(errorMessage)
+    }
+  }, [success, errorMessage, isSubmitted, dispatch, feedId])
 
   function checkEmptyComment(comment) {
-    if (comment) {
+    if (comment.trim() === '') {
       setError('Comment cannot be empty')
       return true
     }
   }
 
   const handleCommentSubmission = (e) => {
-   e.preventDefault()
-   setError('')
+    e.preventDefault()
+    // console.log('Comment: ', comment)
+    setError('')
 
     if (checkEmptyComment(comment)) {
       return
     }
+    
+    dispatch(createComment({ feedId, comment }))
 
-   console.log("Comment: ", readComments())
+    setIsSubmitted(true)
+  
     setComment('')
   }
 
@@ -63,7 +54,7 @@ const FeedComments = () => {
         <div className=''>
           <img className='rounded-full h-12 w-12' src={Logo} alt='Profile' />
         </div>
-        <form action='' onSubmit={handleCommentSubmission}>
+        <form onSubmit={handleCommentSubmission}>
           <div className='flex items-center justify-between'>
             <div className='mx-3'>
               <input
@@ -77,11 +68,12 @@ const FeedComments = () => {
               />
             </div>
             <div className='mr-5'>
-              <Icon
-                onClick={checkEmptyComment}
-                icon='material-symbols:send'
-                className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1  rounded-full h-12 w-12'
-              />
+              <button type='submit'>
+                <Icon
+                  icon='material-symbols:send'
+                  className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1  rounded-full h-12 w-12'
+                />
+              </button>
             </div>
           </div>
         </form>

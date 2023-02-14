@@ -12,8 +12,8 @@ const store = configureStore({
     login,
     post,
     createPost: createPostSlice,
-    comment: readComment,
-    createComment: createCommentSlice
+    readComment,
+    createComment: createCommentSlice,
   },
 })
 
