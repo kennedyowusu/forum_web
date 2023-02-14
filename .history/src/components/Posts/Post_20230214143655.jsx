@@ -115,7 +115,6 @@ const Post = () => {
 
       {/* Display all comments */}
       <div className='py-5'>
-        
         <div className='flex items-center'>
           <div className=''>
             <img className='rounded-full h-12 w-12' src={Logo} alt='Profile' />
@@ -131,7 +130,22 @@ const Post = () => {
           ))} */}
           </div>
         </div>
-        
+
+        <div className='flex items-center'>
+          <div className=''>
+            <img className='rounded-full h-12 w-12' src={Logo} alt='Profile' />
+          </div>
+          <div className='ml-3'>
+            <p className='font-bold '>User's Name</p>
+            <p className='text-gray-500 text-sm '>user's comment goes here</p>
+            {/* {posts.map((post) => (
+            <>
+              <p className='font-bold '>{}</p>
+              <p className='text-gray-500 text-sm '>{post.created_at}</p>
+            </>
+          ))} */}
+          </div>
+        </div>
       </div>
 
       <div className='border-b mt-3'></div>

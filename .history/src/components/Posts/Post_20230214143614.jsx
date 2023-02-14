@@ -114,8 +114,7 @@ const Post = () => {
       </div>
 
       {/* Display all comments */}
-      <div className='py-5'>
-        
+      <div className=''>
         <div className='flex items-center'>
           <div className=''>
             <img className='rounded-full h-12 w-12' src={Logo} alt='Profile' />
@@ -131,7 +130,6 @@ const Post = () => {
           ))} */}
           </div>
         </div>
-        
       </div>
 
       <div className='border-b mt-3'></div>

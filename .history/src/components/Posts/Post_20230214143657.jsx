@@ -115,7 +115,6 @@ const Post = () => {
 
       {/* Display all comments */}
       <div className='py-5'>
-        
         <div className='flex items-center'>
           <div className=''>
             <img className='rounded-full h-12 w-12' src={Logo} alt='Profile' />
