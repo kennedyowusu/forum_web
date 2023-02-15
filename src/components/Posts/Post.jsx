@@ -12,6 +12,20 @@ const Post = ({ post }) => {
     like ? setLike(false) : setLike(true)
   }
 
+  const getTimeAgo = (createdAt) => {
+    const postTime = new Date(createdAt).getTime()
+    const currentTime = Date.now()
+    const timeDiff = currentTime - postTime
+    const oneDayInMs = 24 * 60 * 60 * 1000 // 24 hours in milliseconds
+    const daysAgo = Math.floor(timeDiff / oneDayInMs)
+    if (daysAgo > 0) {
+      return `${daysAgo} day${daysAgo > 1 ? 's' : ''} ago`
+    } else {
+      const hoursAgo = Math.floor(timeDiff / (60 * 60 * 1000))
+      return `${hoursAgo} hour${hoursAgo > 1 ? 's' : ''} ago`
+    }
+  }
+
   return (
     <>
       <div className=' p-3 rounded-md shadow-md border border-[#f2f3f7]'>
@@ -27,7 +41,9 @@ const Post = ({ post }) => {
             </div>
             <div className='ml-3'>
               <p className='font-bold '>{post.user.name}</p>
-              <p className='text-gray-500 text-sm '>2 hours ago</p>
+              <p className='text-gray-500 text-sm '>
+                {getTimeAgo(post.created_at)}
+              </p>
             </div>
           </div>
           {/* Post Title */}
@@ -93,13 +109,12 @@ const Post = ({ post }) => {
                   />
                 </div>
                 <div className='ml-3'>
-                  <p className='font-bold '>
-                    {comment.user.name}
-                  </p>
-                  <p className='text-gray-500 text-sm '>
-                    {
-                      comment.body
-                    }
+                  <p className='font-bold '>{comment.user.name}</p>
+                  <p className='text-gray-500 text-sm '>{comment.body}</p>
+                  <p>
+                    <span className='text-gray-500 text-sm '>
+                      {getTimeAgo(comment.created_at)}
+                    </span>
                   </p>
                 </div>
               </div>
@@ -113,7 +128,7 @@ const Post = ({ post }) => {
         </div>
       </div>
     </>
-  )
+  ) 
 }
 
 export default Post
