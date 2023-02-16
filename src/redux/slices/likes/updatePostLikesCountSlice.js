@@ -9,7 +9,6 @@ export const likePost = createAsyncThunk(
       const response = await post(
         `feed/like/${postId}`
       )
-      // console.log(response.data.likes_count)
       return response.data.likes_count
      
     } catch (error) {

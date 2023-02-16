@@ -1,5 +1,5 @@
 import { useState, } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Logo from '../../assets/forum.png'
 import { Icon } from '@iconify/react'
 import FeedComments from '../comments/FeedComments'
@@ -61,7 +61,7 @@ const Post = ({ post }) => {
               <div className='flex items-center'>
                 <Icon
                   icon='wpf:like'
-                  className={`text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6 ${likeColor}`}
+                  className={`text-md md:lg cursor-pointer mr-1 w-6 h-6 ${likeColor}`}
                   onClick={handleLike}
                 />
                 <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
