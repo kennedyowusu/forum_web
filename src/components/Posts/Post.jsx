@@ -77,7 +77,7 @@ const Post = ({ post }) => {
               <div className='flex items-center ml-8'>
                 <Icon
                   icon='material-symbols:comment-rounded'
-                  className='text-gray-500 text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6'
+                  className='text-gray-500 text-md md:lg cursor-pointer mr-1 w-6 h-6'
                 />
                 <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
                   <span className='font-bold'>{post.comments.length}</span>{' '}
