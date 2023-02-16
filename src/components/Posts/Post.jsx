@@ -1,17 +1,27 @@
-import { useState } from 'react'
+import { useState, } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Logo from '../../assets/forum.png'
 import { Icon } from '@iconify/react'
 import FeedComments from '../comments/FeedComments'
 import getTimeAgo from '../../utils/getTimeAgo'
+import { likePost } from '../../redux/slices/likes/updatePostLikesCountSlice'
 
 const Post = ({ post }) => {
   const [like, setLike] = useState(false)
 
-  const likeColor = like ? 'text-blue-500' : 'text-gray-500'
+  const dispatch = useDispatch()
+
+  const likeColor = like ? 'text-red-500' : 'text-gray-500'
 
   const handleLike = () => {
-    like ? setLike(false) : setLike(true)
+    const newLikeCount = like ? post.likes_count - 1 : post.likes_count + 1
+    dispatch(likePost(
+      post.id,
+      console.log(newLikeCount)
+    ));
+    setLike(!like);
   }
+
 
   return (
     <>
@@ -56,8 +66,9 @@ const Post = ({ post }) => {
                 />
                 <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
                   <span className='font-bold'>
-                    {/* {like ? '1' : '0'} */}
-                    {post.likes_count}
+                    {
+                      like ? post.likes_count + 1 : post.likes_count
+                    }
                   </span>{' '}
                   Likes
                 </p>
