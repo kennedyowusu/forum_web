@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://192.168.137.71:8000/api/",
+  baseURL: 'http://192.168.1.102:8000/api/',
   headers: {
-    "Content-Type": "application/json",
-    Authorization: "Bearer " + localStorage.getItem("token"),
+    'Content-Type': 'application/json',
+    Authorization: 'Bearer ' + localStorage.getItem('token'),
   },
-});
+})
 
 // Post Request
 export const post = (url, data) => {
