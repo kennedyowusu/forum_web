@@ -1,30 +1,27 @@
-import { useState } from 'react'
+import { useState, } from 'react'
+import { useDispatch } from 'react-redux'
 import Logo from '../../assets/forum.png'
 import { Icon } from '@iconify/react'
 import FeedComments from '../comments/FeedComments'
+import getTimeAgo from '../../utils/getTimeAgo'
+import { likePost } from '../../redux/slices/likes/updatePostLikesCountSlice'
 
 const Post = ({ post }) => {
   const [like, setLike] = useState(false)
 
-  const likeColor = like ? 'text-blue-500' : 'text-gray-500'
+  const dispatch = useDispatch()
+
+  const likeColor = like ? 'text-red-500' : 'text-gray-500'
 
   const handleLike = () => {
-    like ? setLike(false) : setLike(true)
+    const newLikeCount = like ? post.likes_count - 1 : post.likes_count + 1
+    dispatch(likePost(
+      post.id,
+      console.log(newLikeCount)
+    ));
+    setLike(!like);
   }
 
-  const getTimeAgo = (createdAt) => {
-    const postTime = new Date(createdAt).getTime()
-    const currentTime = Date.now()
-    const timeDiff = currentTime - postTime
-    const oneDayInMs = 24 * 60 * 60 * 1000 // 24 hours in milliseconds
-    const daysAgo = Math.floor(timeDiff / oneDayInMs)
-    if (daysAgo > 0) {
-      return `${daysAgo} day${daysAgo > 1 ? 's' : ''} ago`
-    } else {
-      const hoursAgo = Math.floor(timeDiff / (60 * 60 * 1000))
-      return `${hoursAgo} hour${hoursAgo > 1 ? 's' : ''} ago`
-    }
-  }
 
   return (
     <>
@@ -64,13 +61,14 @@ const Post = ({ post }) => {
               <div className='flex items-center'>
                 <Icon
                   icon='wpf:like'
-                  className={`text-md md:lg cursor-pointer hover:text-blue-500 mr-1 w-6 h-6 ${likeColor}`}
+                  className={`text-md md:lg cursor-pointer mr-1 w-6 h-6 ${likeColor}`}
                   onClick={handleLike}
                 />
                 <p className='text-gray-500 text-sm ml-1 hover:text-gray-500'>
                   <span className='font-bold'>
-                    {/* {like ? '1' : '0'} */}
-                    {post.likes_count}
+                    {
+                      like ? post.likes_count + 1 : post.likes_count
+                    }
                   </span>{' '}
                   Likes
                 </p>

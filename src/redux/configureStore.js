@@ -5,6 +5,7 @@ import post from './slices/post/readPostSlice';
 import createPostSlice from './slices/post/createPostSlice'
 import readComment from './slices/comment/readComment'
 import createCommentSlice from './slices/comment/createComment'
+import updatePostLikesCount from './slices/likes/updatePostLikesCountSlice'
   
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     createPost: createPostSlice,
     readComment,
     createComment: createCommentSlice,
+    updatePostLikesCount
   },
 })
 
