@@ -4,7 +4,7 @@ import { post } from '../../../utils/axiosInstance'
 export const createPost = createAsyncThunk(
   'post/createPost',
   async (data, thunkAPI) => {
-    const response = await post('feeds', data)
+    const response = await post('feed/store', data)
     try {
       if (response.status === 201) {
         return response.data
@@ -28,7 +28,7 @@ const initialState = {
 }
 
 const createPostSlice = createSlice({
-  name: 'post',
+  name: 'createPost',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -61,4 +61,4 @@ export default createPostSlice.reducer
 
 export const createPostActions = createPostSlice.actions
 
-export const selectPost = (state) => state.post.post
+export const selectCreatePostState = (state) => state.createPost
