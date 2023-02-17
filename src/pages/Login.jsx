@@ -55,6 +55,10 @@ const Login = () => {
       </div>
 
       <div className='bg-gray-800 flex flex-col justify-center'>
+        <p className='text-white text-center text-xl font-semibold px-6 mb-12 sm:-mt-[18rem]'>
+          Let's Connect & Converse on{' '}
+          <span className='text-teal-500 font-bold'>Evolve</span>
+        </p>
         <form
           className='max-w-[400px] w-full mx-auto rounded-lg bg-gray-900 p-8 px-8'
           onSubmit={handleSubmit}
@@ -84,7 +88,7 @@ const Login = () => {
             <p className='flex items-center'>
               <input className='mr-2' type='checkbox' /> Remember Me
             </p>
-            <p className=''>
+            <p className='text-teal-500'>
               <Link to='/forgot-password'>Forget Password?</Link>
             </p>
           </div>
@@ -109,8 +113,8 @@ const Login = () => {
             className={`${
               checkEmptyFields()
                 ? 'bg-gray-500 cursor-not-allowed text-gray-400'
-                : 'bg-teal-500 shadow-teal-500/50 hover:shadow-teal-500/40'
-            } w-full my-5 py-2  shadow-lg  text-white font-semibold rounded-lg`}
+                : 'bg-[#1E319D]'
+            } w-full my-5 py-2   text-white font-semibold rounded-lg`}
           >
             <div className='flex items-center justify-center'>
               {loading ? (

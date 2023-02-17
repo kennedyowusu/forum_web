@@ -6,16 +6,20 @@ const ForgetPwd = () => {
   const [email, setEmail] = useState('')
   const [error, setError] = useState(null)
 
+  const checkEmptyFields = () => {
+    if ( !email) {
+      return true
+    }
+    return false
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-  
-    if (!email) {
-      setError('Email Address is required')
+
+    if (checkEmptyFields()) {
+      setError('Email Address is require')
       return
     }
-
-     // Dispatch the registerUser async thunk
-     // const res = await dispatch(registerUser(name, username, email, password))/
   }
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
@@ -24,11 +28,15 @@ const ForgetPwd = () => {
       </div>
 
       <div className='bg-gray-800 flex flex-col justify-center'>
+        <p className='text-white text-center text-xl font-semibold px-6 mb-12 sm:-mt-[18rem]'>
+          Let's Connect & Converse on{' '}
+          <span className='text-teal-500 font-bold'>Evolve</span>
+        </p>
         <form
           className='max-w-[400px] w-full mx-auto rounded-lg bg-gray-900 p-8 px-8'
           onSubmit={handleSubmit}
         >
-          <p className='text-2xl text-white text-opacity-75 text-opacity-6 font-bold text-justify pb-5'>
+          <p className='text-xl text-white text-opacity-75 text-opacity-6 font-bold text-center pb-5'>
             Enter your email address and we'll send you a link to reset your
             password
           </p>
@@ -37,7 +45,7 @@ const ForgetPwd = () => {
             <input
               className='rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-800 focus:outline-none'
               type='text'
-              placeholder='kennediowusu@gmail.com'
+              placeholder='kennyowusu@gmail.com'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -47,13 +55,19 @@ const ForgetPwd = () => {
               {error}
             </div>
           )}
-          <button className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg'>
+          <button
+            className={`${
+              checkEmptyFields()
+                ? 'bg-gray-500 cursor-not-allowed text-gray-400'
+                : 'bg-[#1E319D]'
+            } w-full my-5 py-2   text-white font-semibold rounded-lg`}
+          >
             Submit
           </button>
           <p className='text-center text-gray-400'>
             Remember your password?{' '}
             <span className='text-teal-500 cursor-pointer'>
-              <Link to='/register'>Go Back</Link>
+              <Link to='/login'>Go Back</Link>
             </span>
           </p>
         </form>
