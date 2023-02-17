@@ -69,10 +69,10 @@ After you're finished please remove all the comments and instructions!
 
 ### Tech Stack <a name="tech-stack"></a>
 
-- Flutter
-- Dart
-- GetX
+- React
+- Redux
 - Rest API
+
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
@@ -180,6 +180,10 @@ npm start
 - [ ] **[Implement password resetting]**
 - [ ] **[Limit users' privileges on others' post]**
 - [ ] **[Post and Comment Updating]**
+- [ ] **[Moderation Tools: Enable moderators to monitor and manage posts on the forum, including removing spam, offensive content, or posts that violate community guidelines]
+- [ ] **[Search Functionality: Allow users to search for specific posts or threads on the forum by keyword, author, or topic.]**
+- [ ] **[Notifications: Notify users when someone replies to their posts, tags them, or sends them a direct message. This keeps users engaged with the community and encourages participation.]**
+- [ ] **[Private Messaging: Allow users to send private messages to each other. This is useful for discussing sensitive or personal topics that may not be suitable for public discussion.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
