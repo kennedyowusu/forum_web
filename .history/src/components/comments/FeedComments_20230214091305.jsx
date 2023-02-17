@@ -1,0 +1,79 @@
+import React from 'react'
+import { useState, useEffect } from 'react'
+import { selectComments } from '../../redux/slices/comment/readComment'
+import { useDispatch, useSelector } from 'react-redux'
+
+const FeedComments = () => {
+  const [comment, setComment] = useState('')
+
+  const dispatch = useDispatch()
+  const { comments } = useSelector(selectComments)
+
+ useEffect(() => {
+  dispatch(readComments())
+  if (comments) {
+   console.log(comments)
+  } else {
+   console.log('comments is undefined')
+   
+  const checkEmptyField = () => {
+    if (comment.trim() === '') {
+      return true
+    }
+    return false
+  }
+
+  // const handleComment = () => {
+  //   if (checkEmptyField()) {
+  //     return
+  //   }
+
+  //   setComment('')
+  // }
+
+  function checkEmptyComment(comment) {
+    return comment.trim() === ''
+  }
+
+  const handleCommentSubmission = (e) => {
+    e.preventDefault()
+    if (checkEmptyComment(comment)) {
+      return
+    }
+    setComment('')
+  }
+
+  return (
+    <div className='mt-3'>
+      <div className='flex items-center'>
+        <div className=''>
+          <img className='rounded-full h-12 w-12' src={Logo} alt='Profile' />
+        </div>
+        <form action='' onSubmit={handleCommentSubmission}>
+          <div className='flex items-center justify-between'>
+            <div className='mx-3'>
+              <input
+                type='text'
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                className='w-full rounded-md py-2 px-4 outline-0 bg-[#f2f3f7] pl-3 h-12
+                  md:pl-3 md:h-12 md:rounded-md md:p-1 md:mr-1 md:w-[25rem]
+                '
+                placeholder='Add a comment...'
+              />
+            </div>
+            <div className='mr-5'>
+              <Icon
+                onClick={checkEmptyComment}
+                icon='material-symbols:send'
+                className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1  rounded-full h-12 w-12'
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
+
+export default FeedComments
