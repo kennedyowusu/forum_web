@@ -9,7 +9,6 @@ const Feed = () => {
       {/* Left Side Feed */}
       <LeftSide />
       <div className='mx-auto'>
-        {/* <Trends /> */}
         <CreateFeed />
         <Posts />
       </div>

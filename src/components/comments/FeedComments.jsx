@@ -71,7 +71,7 @@ const FeedComments = ({ feedId }) => {
               <button type='submit'>
                 <Icon
                   icon='material-symbols:send'
-                  className='text-gray-500 text-md md:lg cursor-pointer hover:text-gray-500 mr-1  rounded-full h-12 w-12'
+                  className='text-white text-center p-1 bg-[#1E319D] text-md md:lg cursor-pointer hover:text-gray-500 mr-1  rounded-full h-12 w-12'
                 />
               </button>
             </div>

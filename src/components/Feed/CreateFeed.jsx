@@ -5,8 +5,9 @@ import { Icon } from '@iconify/react'
 import { toast } from 'react-toastify'
 import handleInputError from '../../utils/handleInputError'
 import { readPosts } from '../../redux/slices/post/readPostSlice'
+import colors from '../../utils/colors'
 
-const CreateFeed = () => {
+const CreateFeed = ({color}) => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [error, setError] = useState('')
@@ -108,7 +109,8 @@ const CreateFeed = () => {
             <button
               disabled={loading}
               type='submit'
-              className='bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600'
+              // className={`bg-${colors.primaryColor}-500 text-${colors.white} py-2 px-4 rounded-lg hover:bg-${colors.primaryColor}-600`}
+              className="bg-[#1E319D] text-white py-2 px-4 rounded-lg"
             >
               <div className='flex items-center justify-center'>
                 {loading ? (
